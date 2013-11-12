@@ -1,0 +1,58 @@
+// variables
+$black:#000;
+$white:#fff;
+$ftHeight:40px;
+
+
+// main css
+*{
+  margin: 0;
+  padding: 0;
+}
+html{
+  height:100%;
+}
+body{
+  background:$white;
+  @extend html;
+}
+.wrapper{
+  min-height: 100%;
+  min-width: 1024px;
+}
+.pre_footer{
+  height:$ftHeight;
+}
+footer{
+  margin-top:-$ftHeight;
+  line-height: $ftHeight;
+  @extend .pre_footer;
+}
+.tooltip{
+  display: inline;
+  position: relative;
+  cursor: pointer;
+}
+.tooltip:hover:after{
+  background: #333;
+  color: #fff;
+  white-space: nowrap;
+  border-radius: 5px;
+  top: 21px;
+  content: attr(title);
+  left: 20%;
+  padding: 5px 15px;
+  position: absolute;
+  z-index: 98;
+
+}
+.tooltip:hover:before{
+  border: solid;
+  border-color: #333 transparent;
+  border-width: 0px 6px 6px 6px;
+  top: 15px;
+  content: "";
+  left: 50%;
+  position: absolute;
+  z-index: 99;
+}
